@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Happy Birthday Apsiduza!</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="fabric.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="fabric.js"></script>
+    </head>
+    <body onload="new_image()">
+        <center>
+            <canvas width="500" height="400" id="bDayCanvas"></canvas><br><br><br><br><br><br><br><br><br><br><br>
+            <button class="btn btn-danger btn-lg" onclick="play()">Click me for a Suprise!!!`</button>
+        </center>
+        <audio id="bDayAudio" src="bdayaudio.mp3"></audio>
+        <style>
+            body 
+            {
+                background-image:url(BG.gif);
+                background-position:center;
+                background-size:cover;
+            }
+            #bDayCanvas
+            {
+                border: 10px darkviolet ridge;
+                background-color:white;
+                margin-top: 100px;
+            }
+        </style>
+        <script>
+            var canvas = new fabric.Canvas("bDayCanvas");
+            var x= document.getElementById("bDayAudio");
+
+            function new_image()
+            {
+	            fabric.Image.fromURL("BirthdayImage.jpg",function(Img){
+                block_image_object = Img;
+
+                    block_image_object.scaleToWidth(700);
+                    block_image_object.scaleToWidth(510);
+                    block_image_object.set({
+                        top:0,
+                        left:0
+                    });
+                    canvas.add(block_image_object);
+                });
+	
+            }
+
+function play(){
+	x.play();
+}
+
+        </script>
+    </body>
+</html>
